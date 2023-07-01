@@ -1,0 +1,35 @@
+= Install Playstation Mobile (PSM) Runtime via Custom DNS and HTTP Server
+
+== General
+* Custom HTTP Server to serve files of version 1.0 of package `PCSI00011` "Playstation Mobile (PSM) Runtime"
+* Custom DNS Server to redirect `psm-runtime.np.dl.playstation.net` to the custom HTTP Server
+
+== Custom HTTP Server Setup
+* Virtual host for `psm-runtime.np.dl.playstation.net`
+* Path for files: http://psm-runtime.np.dl.playstation.net/psm-runtime/
+* Serve the following three files via the above mentioned path:
+```
+MD5SUM:
+ebd81a5668502ca175c6fba43649b311 *IP9100-PCSI00011_00-PSMRUNTIME000000.pkg
+cad1984673f31a6daf4ba0cd77b573b9 *IP9100-PCSI00011_00-PSMRUNTIME000000.png
+63d4f17a1eb3ccb1320d7112074ba127 *IP9100-PCSI00011_00-PSMRUNTIME000000.sig
+
+SHA1SUM:
+b0d3d8fa0cb870c5f87557a408a13a722d2b3d75 *IP9100-PCSI00011_00-PSMRUNTIME000000.pkg
+e8968200581a8fb60dcd16a4330c2636340bd56b *IP9100-PCSI00011_00-PSMRUNTIME000000.png
+a1d660a334b5461c3aec067ac509e5fc173359b1 *IP9100-PCSI00011_00-PSMRUNTIME000000.sig
+
+SHA256SUM:
+46d690bc6f0685afd4221a4fe434ee01158cb17377dbfc23d83b3d510e296ff0 *IP9100-PCSI00011_00-PSMRUNTIME000000.pkg
+eac19cc89e87ee36ffd3249b3eb769da2ec63239a5e489af18e413909149dadc *IP9100-PCSI00011_00-PSMRUNTIME000000.png
+083fd919e1b1326d5ce8d6aaa528a94d46cb9c4284638a5fe3d03a94f6127091 *IP9100-PCSI00011_00-PSMRUNTIME000000.sig
+```
+
+== Custom DNS Server Setup
+* IPv4 entry (`A` record) for domain `psm-runtime.np.dl.playstation.net` with the IP of the Custom HTTP Server
+
+== Epilogue
+Verified with OFW 3.74 in 2023-07
+```
+aHR0cHM6Ly9tZWdhLm56L2ZvbGRlci9OdkpEbUlyYgowQ2FreDVoQ2MtWnI2NHBWdTNyM0J3Cg==
+```
